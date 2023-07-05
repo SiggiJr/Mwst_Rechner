@@ -138,9 +138,20 @@ const changeNetGrossBtn = () => {
 
 inputForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const amountInputValue = Number(amountInput.value);
+  const amountInputValue = Number(amountInput.value.replace(",", "."));
   let taxRate;
   let netGrossResult;
+
+  console.log(amountInputValue);
+
+  if (!/^\d*(?:[\.,])?\d{0,2}$/.test(amountInputValue)) {
+    amountInputLabel.querySelector("span").textContent = "*";
+    return;
+  }
+
+  amountInputLabel.querySelector("span").textContent = "";
+
+  console.log(/^\d*(?:[\.,])?\d{0,2}$/.test(amountInputValue));
 
   if (taxRate7.checked) {
     taxRate = 1.07;
@@ -156,8 +167,8 @@ inputForm.addEventListener("submit", (event) => {
   netGrossResult = netGrossResult.toFixed(2);
   const mwstResult = Math.abs(amountInputValue - netGrossResult).toFixed(2);
 
-  mwstOutput.textContent = `${mwstResult}€`;
-  NetGrossOutput.textContent = `${netGrossResult}€`;
+  mwstOutput.textContent = `${mwstResult.toString().replace(".", ",")}€`;
+  NetGrossOutput.textContent = `${netGrossResult.toString().replace(".", ",")}€`;
 });
 
 grossToNet.addEventListener("click", changeNetGrossBtn);
