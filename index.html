@@ -9,21 +9,21 @@
   </head>
   <body>
     <section class="mwst_rechner_input_container">
-      <h1>Mehrwersteuer-Rechner</h1>
+      <h1>Mehrwertsteuer-Rechner</h1>
       <form class="mwst_input_form">
         <div class="net_gross_choice_container container_styling">
           <p>Was soll berechnet werden?</p>
           <div>
             <input type="radio" name="net_gross_choice" id="net_to_gross" checked />
-            <label for="net_to_gross">Mehrwersteuer aufschlagen (Netto zu Brutto)</label>
+            <label for="net_to_gross">Mehrwertsteuer aufschlagen (Netto zu Brutto)</label>
           </div>
           <div>
             <input type="radio" name="net_gross_choice" id="gross_to_net" />
-            <label for="net_to_gross">Mehrwersteuer abziehen (Brutto zu Netto)</label>
+            <label for="net_to_gross">Mehrwertsteuer abziehen (Brutto zu Netto)</label>
           </div>
         </div>
         <div class="tax_rate_choice_container container_styling">
-          <p>Mehrwersteuersatz</p>
+          <p>Mehrwertsteuersatz</p>
           <input type="radio" name="tax_rate" id="tax_rate_19" checked />
           <label for="tax_rate_19">19%</label>
           <input type="radio" name="tax_rate" id="tax_rate_7" />
@@ -32,7 +32,7 @@
         <div class="amount_input_container container_styling">
           <div>
             <label for="amount_input"
-              >Nettobetrag (Preis ohne Mehrwersteuer) in Euro<span style="color: red"></span
+              >Nettobetrag (Preis ohne Mehrwertsteuer) in Euro<span style="color: red"></span
             ></label>
           </div>
           <input type="text" name="amount_input" id="amount_input" />
@@ -43,7 +43,7 @@
     <section class="mwst_rechner_output_container">
       <p class="result">Ergebnis</p>
       <div class="mwst_betrag container_styling">
-        <p>Mehrwersteuerbetrag</p>
+        <p>Mehrwertsteuerbetrag</p>
         <p class="mwst_output output_styling"></p>
       </div>
       <div class="net_gross_betrag container_styling">

@@ -113,7 +113,7 @@ console.log(Number(num9));
 
 console.clear();
 
-//# Mehrwersteuer-Rechner
+//# Mehrwertsteuer-Rechner
 
 const inputForm = document.querySelector(".mwst_input_form");
 const grossToNet = document.querySelector("#gross_to_net");
@@ -132,7 +132,7 @@ const changeNetGrossBtn = () => {
       'Bruttobetrag (Preis inklusive Mehrwertsteuer) in Euro<span style="color: red"></span>';
     netGrossOutputText.textContent = "Bruttobetrag (Endpreis)";
   } else {
-    amountInputLabel.innerHTML = 'Nettobetrag (Preis ohne Mehrwersteuer) in Euro<span style="color: red"></span>';
+    amountInputLabel.innerHTML = 'Nettobetrag (Preis ohne Mehrwertsteuer) in Euro<span style="color: red"></span>';
     netGrossOutputText.textContent = "Nettobetrag";
   }
 };
