@@ -128,10 +128,11 @@ const NetGrossOutput = document.querySelector(".net_gross_output");
 
 const changeNetGrossBtn = () => {
   if (grossToNet.checked) {
-    amountInputLabel.textContent = "Bruttobetrag (Preis inklusive Mehrwertsteuer) in Euro";
+    amountInputLabel.innerHTML =
+      'Bruttobetrag (Preis inklusive Mehrwertsteuer) in Euro<span style="color: red"></span>';
     netGrossOutputText.textContent = "Bruttobetrag (Endpreis)";
   } else {
-    amountInputLabel.textContent = "Nettobetrag (Preis ohne Mehrwersteuer) in Euro";
+    amountInputLabel.innerHTML = 'Nettobetrag (Preis ohne Mehrwersteuer) in Euro<span style="color: red"></span>';
     netGrossOutputText.textContent = "Nettobetrag";
   }
 };
@@ -142,16 +143,12 @@ inputForm.addEventListener("submit", (event) => {
   let taxRate;
   let netGrossResult;
 
-  console.log(amountInputValue);
-
   if (!/^\d*(?:[\.,])?\d{0,2}$/.test(amountInputValue)) {
     amountInputLabel.querySelector("span").textContent = "*";
     return;
   }
 
   amountInputLabel.querySelector("span").textContent = "";
-
-  console.log(/^\d*(?:[\.,])?\d{0,2}$/.test(amountInputValue));
 
   if (taxRate7.checked) {
     taxRate = 1.07;
